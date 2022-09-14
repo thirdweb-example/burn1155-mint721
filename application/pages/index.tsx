@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { useAddress, useContract, Web3Button } from "@thirdweb-dev/react";
 import { MAYC_ADDRESS, SERUM_ADDRESS } from "../const/contractAddresses";
+import styles from "../styles/Theme.module.css";
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -33,11 +34,13 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div>
-      <p>{address}</p>
+    <div className={styles.container} style={{ marginTop: "3rem" }}>
+      <p>Welcome, {address}</p>
       <Web3Button
         contractAddress={MAYC_ADDRESS}
         action={(contract) => mintMutantNft()}
+        accentColor="#F213A4"
+        colorMode="dark"
       >
         Mint Your Mutant NFT
       </Web3Button>
