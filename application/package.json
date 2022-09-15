@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@thirdweb-dev/react": "^3",
     "@thirdweb-dev/sdk": "^3",
+=======
+    "@thirdweb-dev/react": "3",
+    "@thirdweb-dev/sdk": "3",
+>>>>>>> e0266d0 (some updates)
     "ethers": "^5.6.8",
     "next": "^12.1.6",
     "react": "^18.1.0",

@@ -879,6 +879,11 @@
   resolved "https://registry.yarnpkg.com/@pedrouid/environment/-/environment-1.0.1.tgz#858f0f8a057340e0b250398b75ead77d6f4342ec"
   integrity sha512-HaW78NszGzRZd9SeoI3JD11JqY+lubnaOx7Pewj5pfjqWXOEATpeKIFb9Z4t2WBUK2iryiXX3lzWwmYWgUL0Ug==
 
+"@react-icons/all-files@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@react-icons/all-files/-/all-files-4.1.0.tgz#477284873a0821928224b6fc84c62d2534d6650b"
+  integrity sha512-hxBI2UOuVaI3O/BhQfhtb4kcGn9ft12RWAFVMUeNjqqhLsHvFtzIkFaptBJpFDANTKoDfdVoHTKZDlwKCACbMQ==
+
 "@rushstack/eslint-patch@^1.1.3":
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.4.tgz#0c8b74c50f29ee44f423f7416829c0bf8bb5eb27"
@@ -934,10 +939,10 @@
     "@tanstack/query-core" "4.3.4"
     use-sync-external-store "^1.2.0"
 
-"@thirdweb-dev/contracts-js@1.1.8-dev-1bb954d":
-  version "1.1.8-dev-1bb954d"
-  resolved "https://registry.yarnpkg.com/@thirdweb-dev/contracts-js/-/contracts-js-1.1.8-dev-1bb954d.tgz#943a7c7945ea1b8a3f653cd2d4537f2be5061b1c"
-  integrity sha512-b3ATErZCGT0FWhJP6+tjWHc7PdwKi6iGpR59xBxUU/zZZxP0iF9BDXyc+alnN3zobzeZ+sV/uwpoLOJN3qQVBQ==
+"@thirdweb-dev/contracts-js@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@thirdweb-dev/contracts-js/-/contracts-js-1.1.8.tgz#4e4b840ac0f0f2abcb4c0d685f05a3a683e7f7bc"
+  integrity sha512-RRO2VH6qz4SRFGsg6Tx40aeHoj3hUbTjj+zZX0C8H3MArNgbvjMgqV1PPaDVpFWb++hJamV49cJiT2RRxVqHIg==
   dependencies:
     "@thirdweb-dev/contracts" "3.1.8-0"
 
@@ -946,16 +951,17 @@
   resolved "https://registry.yarnpkg.com/@thirdweb-dev/contracts/-/contracts-3.1.8-0.tgz#847af3fe9a53368e7be04b7b6e6afe076d3d1676"
   integrity sha512-PiQjdRcAUBlu3poc4g6dN9KvjTgYsA1Vi+B/IgryptCgcJeMY4cldMabKCgPaCg9dPVpUq4O+SOM00P6mBNvGw==
 
-"@thirdweb-dev/react@dev":
-  version "3.0.0-dev-1bb954d"
-  resolved "https://registry.yarnpkg.com/@thirdweb-dev/react/-/react-3.0.0-dev-1bb954d.tgz#1708119654d2a6cdfbbdcd10707c4bcf741daf95"
-  integrity sha512-N8hsH2EMwjyFIRKVcvDeecXNMKkRWnBhQby9FPy+dczZ9/lKiXUoIVujE9IAAwG+iiBMFH5P8RAs6NZJyb3Dbg==
+"@thirdweb-dev/react@3":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@thirdweb-dev/react/-/react-3.0.1.tgz#725633e27a862b771e8a43315c68d58d45a9f88e"
+  integrity sha512-rdv4Sg4XmsiKoKcc0nu+0BU+PN1dP9C6MdHF5Ra1k1mBfQ7Fb4XdRO5RMrntYqaWkxnKT5FRSr91eBlmq009qg==
   dependencies:
     "@emotion/react" "^11.10.0"
     "@emotion/styled" "^11.10.0"
     "@gnosis.pm/safe-core-sdk" "2.1.0"
     "@gnosis.pm/safe-ethers-adapters" "0.1.0-alpha.9"
     "@gnosis.pm/safe-ethers-lib" "1.1.0"
+    "@react-icons/all-files" "^4.1.0"
     "@tanstack/react-query" "^4.0.10"
     "@zag-js/menu" "^0.1.11"
     "@zag-js/react" "0.1.16"
@@ -965,17 +971,16 @@
     magic-sdk "^8.1.1"
     mime "^3.0.0"
     react-cool-dimensions "^2.0.7"
-    react-icons "^4.4.0"
     tiny-invariant "^1.2.0"
     wagmi "^0.2.28"
 
-"@thirdweb-dev/sdk@dev":
-  version "3.0.0-dev-1bb954d"
-  resolved "https://registry.yarnpkg.com/@thirdweb-dev/sdk/-/sdk-3.0.0-dev-1bb954d.tgz#6b03872b73ff494a44fa0c9b6868b896fe41fe26"
-  integrity sha512-bO9NHMj8aphpglUprZgsS4GUhShB1LTqAkFz0MIxmNOrrnwLoLQmxjBERKEuaSCkIIQu/JpteLhlhnFYFbZUMg==
+"@thirdweb-dev/sdk@3":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@thirdweb-dev/sdk/-/sdk-3.0.1.tgz#5415e0464fe929945fdb2539c9ef2db5f3bb0548"
+  integrity sha512-Dd2VlqivNDXeXRVJ+ahUpo0rP7Tjra6vcHrRptt7L7zLWRYsvO5byVFReyi29FcjSyPtCr1wmR/8+gHAcQk25A==
   dependencies:
-    "@thirdweb-dev/contracts-js" "1.1.8-dev-1bb954d"
-    "@thirdweb-dev/storage" "*"
+    "@thirdweb-dev/contracts-js" "^1.1.8"
+    "@thirdweb-dev/storage" "^0.2.8"
     cbor-web "^8.1.0"
     cross-fetch "^3.1.5"
     eventemitter3 "^4.0.7"
@@ -987,7 +992,7 @@
     uuid "^8.3.2"
     zod "^3.11.6"
 
-"@thirdweb-dev/storage@*":
+"@thirdweb-dev/storage@^0.2.8":
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/@thirdweb-dev/storage/-/storage-0.2.8.tgz#7c19b41dab363737e0015733a98e8f5252925db9"
   integrity sha512-XM3wBlpUVWnMwBnHveWP1NgIsJDtvpzDsORO+DP8CQAsYizILKbiBC3n2w+eW/sLOGLuEYEUZk2zPFD/xpPM3Q==
@@ -3990,11 +3995,6 @@ react-dom@^18.1.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
-
-react-icons@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.4.0.tgz#a13a8a20c254854e1ec9aecef28a95cdf24ef703"
-  integrity sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
