@@ -57,22 +57,15 @@ Before claiming from the MAYC contract, the `_beforeTokenTransfers` function is 
 In this function, we enforce the user burns a serum 
 
 ```solidity
-    /// @dev Hook that is called before a set of serially-ordered token ids are about to be transferred. This includes minting.
-    function _beforeTokenTransfers(
-        address,
-        address,
-        uint256,
-        uint256 quantity
-    ) internal virtual override {
-        // this hook is inherited from ERC721A
-        // use this hook to apply any state changes before transfer of tokens or minting
-        // this is to avoid any exploits or reentrancy like attacks
+    function claim(address _receiver, uint256 _quantity) public payable virtual override {
+        // Use the rest of the inherited claim function logic
+        super.claim(_receiver, _quantity);
 
         // Add our custom logic to burn the serum NFTs from the caller
         serum.burn(
-            msg.sender, // burn serum of claimer
+            _receiver,
             0,
-            quantity
+            _quantity
         );
     }
 ```
