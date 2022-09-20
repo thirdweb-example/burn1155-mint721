@@ -44,9 +44,11 @@ import path from "path";
     return acc;
   }, {});
 
-  const csvString = Object.entries(filteredCsv)
-    .map(([address, quantity]) => `${address},${quantity}`)
-    .join("\r");
+  const csvString =
+    "address,quantity \r" +
+    Object.entries(filteredCsv)
+      .map(([address, quantity]) => `${address},${quantity}`)
+      .join("\r");
 
   fs.writeFileSync(path.join(path.dirname("."), "nfts.csv"), csvString);
   console.log("Generated nfts.csv");
