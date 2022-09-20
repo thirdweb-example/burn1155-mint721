@@ -190,24 +190,7 @@ First, let's deploy the BAYC Clone contract. Choose the BAYC Clone contract afte
 
 Now, choose the network you want to deploy your contract to! I am going to use Goerli but you can use whichever one you like. Once you have selected your network click on `Deploy now!`
 
-After the transactions are mined you will be taken to the dashboard which consists of many options.
-
-- In the **overview** section, you can explore your contract and interact with the functions without having to integrate them within your frontend code yet so it gives you a better idea of how your functions are working and also acts as a good testing environment.
-
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1662950763730/N7VfzapNu.png)
-
-- In the **code** section, you see the different languages and ways you can interact with your contract. Which we will look into later on in the tutorial.
-
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1662950773074/p8tPFb8IL.png)
-
-- In the **events** section, you can see all the transactions you make.
-- You can also customize the \***\*settings\*\*** after enabling the required interfaces in the settings section.
-
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1662950781456/P7KkWsUJW.png)
-
-- In the **source** section, you can see your smart contract and it also gives you a verification button to the relevant chain to which you have deployed your contract.
-
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1662950801089/--qY0EUby.png)
+After the transactions are mined you will be taken to the dashboard which consists of many options. Feel free to explorer them but for now we will move on with other contracts!
 
 #### SerumClone
 
@@ -221,7 +204,7 @@ Finally, deploy the MAYC Clone contract. The deployment process will be the same
 
 We need to set up a claim phase so that people can claim our NFTs. We will claim one ourselves for testing as well. Go to the Claim Conditions and create a new claim phase with the parameters that you need!
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1663643639337/q_Q0wVym9.png)
+![Claim Conditions](https://cdn.hashnode.com/res/hashnode/image/upload/v1663643639337/q_Q0wVym9.png)
 
 Now, go to the NFTs tab. Let's batch upload some NFTs for the users to mint. For this guide, I am going to use the [Shapes batch upload example](https://github.com/saminacodes/tw-demo-assets/tree/main/Shapes).
 
@@ -239,7 +222,7 @@ Now, we need to claim some NFTs to test out the process. Go to the explorer tab 
 - \_data: []
 - Native Token Value: 0
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1663644080632/C5L7wIB9T.png)
+![Claim NFT](https://cdn.hashnode.com/res/hashnode/image/upload/v1663644080632/C5L7wIB9T.png)
 
 Click execute and confirm the transaction. Now, you can see that the NFTs have been claimed!
 
