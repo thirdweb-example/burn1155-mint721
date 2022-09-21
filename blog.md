@@ -141,7 +141,7 @@ contract MAYClone is ERC721LazyMint {
 Here, we are extending the `ERC721LazyMint` contract. We are also taking in the BAYC and Serum contract addresses as constructor arguments. Now, let's add the extra functions to the contract!
 
 ```sol
-function verifyClaim(address _claimer, uint256 _quantity)
+ function verifyClaim(address _claimer, uint256 _quantity)
         public
         view
         virtual
@@ -154,21 +154,19 @@ function verifyClaim(address _claimer, uint256 _quantity)
         require(serum.balanceOf(_claimer, 0) >= _quantity, "You don't own enough Serum NFTs");
     }
 
-    // 2. Within the claim, we need to burn 1 quantity of the serum
-    function claim(address _receiver, uint256 _quantity) public payable virtual override {
-        // Use the rest of the inherited claim function logic
-        super.claim(_receiver, _quantity);
-
-        // Add our custom logic to burn the serum NFTs from the caller
+    function transferTokensOnClaim(address _receiver, uint256 _quantity) internal override returns(uint256) {
         serum.burn(
             _receiver,
             0,
             _quantity
         );
+
+        // Use the rest of the inherited claim function logic
+      return super.transferTokensOnClaim(_receiver, _quantity);
     }
 ```
 
-The verifyClaim function checks if the user owns enough BAYC and Serum NFTs. The claim function burns the Serum NFTs from the user and then calls the inherited claim function.
+The verifyClaim function checks if the user owns enough BAYC and Serum NFTs. The transferTokensOnClaim function burns the Serum NFTs from the user and then calls the inherited transferTokensOnClaim function.
 
 Now that we have written our smart contracts, we will go ahead and deploy our contract using [deploy](https://portal.thirdweb.com/deploy).
 
