@@ -37,16 +37,16 @@ contract MAYClone is ERC721LazyMint {
         require(serum.balanceOf(_claimer, 0) >= _quantity, "You don't own enough Serum NFTs");
     }
 
-    // 2. Within the claim, we need to burn 1 quantity of the serum
-    function claim(address _receiver, uint256 _quantity) public payable virtual override {
-        // Use the rest of the inherited claim function logic
-        super.claim(_receiver, _quantity);
-
-        // Add our custom logic to burn the serum NFTs from the caller
+    function transferTokensOnClaim(address _receiver, uint256 _quantity) internal override returns(uint256)
+     {
         serum.burn(
             _receiver,
             0,
             _quantity
         );
+
+
+        // Use the rest of the inherited claim function logic
+      return super.transferTokensOnClaim(_receiver, _quantity);
     }
 }
