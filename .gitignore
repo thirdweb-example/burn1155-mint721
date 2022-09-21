@@ -1,16 +1,24 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+#Hardhat files
+cache
+artifacts
 
 # dependencies
-/node_modules
-/.pnp
+.pnp
 .pnp.js
 
 # testing
-/coverage
+coverage
 
 # next.js
-/.next/
-/out/
+.next/
+out/
 
 # production
 /build
@@ -36,3 +44,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+yarn.lock
+pnpm-lock.yaml
