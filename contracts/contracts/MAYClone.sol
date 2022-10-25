@@ -37,7 +37,7 @@ contract MAYClone is ERC721LazyMint {
         require(serum.balanceOf(_claimer, 0) >= _quantity, "You don't own enough Serum NFTs");
     }
 
-    function transferTokensOnClaim(address _receiver, uint256 _quantity) internal override returns(uint256) {
+    function _transferTokensOnClaim(address _receiver, uint256 _quantity) internal override returns(uint256) {
         serum.burn(
             _receiver,
             0,
@@ -45,6 +45,6 @@ contract MAYClone is ERC721LazyMint {
         );
         
         // Use the rest of the inherited claim function logic
-      return super.transferTokensOnClaim(_receiver, _quantity);
+      return super._transferTokensOnClaim(_receiver, _quantity);
     }
 }
