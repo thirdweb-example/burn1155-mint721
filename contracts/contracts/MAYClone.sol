@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "@thirdweb-dev/contracts/base/ERC721LazyMint.sol";
-import "@thirdweb-dev/contracts/base/ERC1155Base.sol";
+import "@thirdweb-dev/contracts/base/ERC721LazyMint.sol";
 import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
 
 contract MAYClone is ERC721LazyMint {
@@ -10,7 +10,7 @@ contract MAYClone is ERC721LazyMint {
     // 1. Is the BAYC NFT Collection
     ERC721LazyMint public immutable bayc;
     // 2. Is the Serum NFT Collection
-    ERC1155Base public immutable serum;
+    ERC721LazyMint public immutable serum;
 
     constructor(
         string memory _name,
@@ -21,30 +21,34 @@ contract MAYClone is ERC721LazyMint {
         address _serumAddress
     ) ERC721LazyMint(_name, _symbol, _royaltyRecipient, _royaltyBps) {
         bayc = ERC721LazyMint(_baycAddress);
-        serum = ERC1155Base(_serumAddress);
+        serum = ERC721LazyMint(_serumAddress);
     }
 
-    function verifyClaim(address _claimer, uint256 _quantity)
-        public
-        view
-        virtual
-        override
-    {
+    function verifyClaim(
+        address _claimer,
+        uint256 _quantity
+    ) public view virtual override {
         // 1. Override the claim function to ensure a few things:
         // - They own an NFT from the BAYClone contract
-        require(bayc.balanceOf(_claimer) >= _quantity, "You don't own enough BAYC NFTs");
+        require(
+            bayc.balanceOf(_claimer) >= _quantity,
+            "You don't own enough BAYC NFTs"
+        );
         // - They own an NFT from the SerumClone contract
-        require(serum.balanceOf(_claimer, 0) >= _quantity, "You don't own enough Serum NFTs");
+        require(
+            serum.balanceOf(_claimer) >= _quantity,
+            "You don't own enough Serum NFTs"
+        );
     }
 
-    function _transferTokensOnClaim(address _receiver, uint256 _quantity) internal override returns(uint256) {
-        serum.burn(
-            _receiver,
-            0,
-            _quantity
-        );
-        
+    function _transferTokensOnClaim(
+        address _receiver,
+        uint256 _quantity,
+        uint256 _tokenId
+    ) internal returns (uint256) {
+        serum.burn(_tokenId);
+
         // Use the rest of the inherited claim function logic
-      return super._transferTokensOnClaim(_receiver, _quantity);
+        return super._transferTokensOnClaim(_receiver, _quantity);
     }
 }
