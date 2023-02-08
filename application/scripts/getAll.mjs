@@ -7,14 +7,15 @@ import path from "path";
   // Create a READ-ONLY instance of the ThirdwebSDK on the Mumbai network
   const sdk = new ThirdwebSDK("goerli"); // configure this to your network
   const contract = await sdk.getContract(
-    "0x3714e40A15Deffb8E43A58b018bD81C2c6AC2445"
+    "0x3714e40A15Deffb8E43A58b018bD81C2c6AC2445",
+    "nft-drop"
   );
 
   if (!contract) {
     return;
   }
 
-  const nfts = await contract?.nft?.query?.all();
+  const nfts = await contract?.erc721.getAll();
 
   // The format of the csv file should be as follows:
   // address, quantity
