@@ -2,7 +2,6 @@
 pragma solidity ^0.8.0;
 
 import "@thirdweb-dev/contracts/base/ERC721LazyMint.sol";
-import "@thirdweb-dev/contracts/base/ERC721LazyMint.sol";
 import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
 
 contract MAYClone is ERC721LazyMint {
