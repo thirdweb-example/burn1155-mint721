@@ -6,6 +6,8 @@ Similar to the [Mutant Ape Yacht Club](https://opensea.io/collection/mutant-ape-
 2. Build an ERC1155 Contract - Mimicking the [Serum NFT Collection](https://opensea.io/collection/bored-ape-chemistry-club)
 3. Create an ERC721 Drop with restrictions on who can claim, based on their ownership of the two above collections.
 
+If you want to build a burn an erc721 token to get another erc721 token, refer to the [burn721 branch](https://github.com/thirdweb-example/burn1155-mint721/tree/burn721).
+
 ## Using This Template
 
 ```
